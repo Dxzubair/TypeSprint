@@ -20,12 +20,22 @@ jobs:
           java-version: '17'
           cache: gradle
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - - name: Check Gradle Wrapper
+  run: |
+    pwd
+    ls -la
+    ls -la gradle/wrapper
+    file gradlew
+    file gradle/wrapper/gradle-wrapper.jar
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+- name: Make gradlew executable
+  run: chmod +x gradlew
 
+- name: Build Debug APK
+  run: ./gradlew --version
+
+- name: Assemble APK
+  run: ./gradlew assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
