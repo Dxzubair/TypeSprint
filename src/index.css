@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Default Theme Variables (Midnight Orange) */
+  --theme-primary: #ff6b00;
+  --theme-primary-hover: #e05e00;
+  --theme-secondary: #ff9e40;
+  --theme-tertiary: #cc5200;
+  --theme-background: #0b0f19;
+  --theme-surface: #151c2c;
+  --theme-surface-variant: #202a3e;
+  --theme-surface-variant-light: #2b3954;
+  --theme-surface-light: #1c273e;
+  --theme-error: #ef4444;
+  --theme-outline: #2e3b55;
+  --theme-on-primary: #050505;
+  --theme-on-background: #f8fafc;
+  --theme-on-surface: #f1f5f9;
+  --theme-on-surface-muted: #94a3b8;
+  --theme-on-secondary: #050505;
+  --theme-primary-50: #fff7ed;
+  --theme-primary-100: #ffedd5;
+  --theme-primary-200: #fed7aa;
+  --theme-primary-300: #fdbb2f;
+  --theme-primary-400: #fb923c;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  /* Dynamically map Tailwind v4 variables to CSS variables defined by the active theme class */
+  --color-primary-50: var(--theme-primary-50);
+  --color-primary-100: var(--theme-primary-100);
+  --color-primary-200: var(--theme-primary-200);
+  --color-primary-300: var(--theme-primary-300);
+  --color-primary-400: var(--theme-secondary);
+  --color-primary-500: var(--theme-primary);
+  --color-primary-600: var(--theme-primary-hover);
+  --color-primary-700: var(--theme-tertiary);
+  --color-primary-800: var(--theme-tertiary);
+  --color-primary-900: var(--theme-tertiary);
+  --color-primary-950: var(--theme-background);
+  --color-on-primary: var(--theme-on-primary);
+
+  /* Override other accent & UI colors commonly utilized across panels */
+  --color-amber-50: var(--theme-primary-50);
+  --color-amber-100: var(--theme-primary-100);
+  --color-amber-200: var(--theme-primary-200);
+  --color-amber-300: var(--theme-primary-300);
+  --color-amber-400: var(--theme-secondary);
+  --color-amber-500: var(--theme-primary);
+  --color-amber-600: var(--theme-primary-hover);
+  --color-amber-700: var(--theme-tertiary);
+  --color-amber-800: var(--theme-tertiary);
+  --color-amber-900: var(--theme-tertiary);
+  --color-amber-950: var(--theme-background);
+
+  --color-orange-50: var(--theme-primary-50);
+  --color-orange-100: var(--theme-primary-100);
+  --color-orange-200: var(--theme-primary-200);
+  --color-orange-300: var(--theme-primary-300);
+  --color-orange-400: var(--theme-secondary);
+  --color-orange-500: var(--theme-primary);
+  --color-orange-600: var(--theme-primary-hover);
+  --color-orange-700: var(--theme-tertiary);
+  --color-orange-800: var(--theme-tertiary);
+  --color-orange-900: var(--theme-tertiary);
+  --color-orange-950: var(--theme-background);
+
+  /* Overrides for background surfaces and cards */
+  --color-zinc-950: var(--theme-background);
+  --color-zinc-900: var(--theme-surface);
+  --color-zinc-800: var(--theme-surface-variant);
+  --color-zinc-700: var(--theme-surface-variant-light);
+  
+  --color-zinc-100: var(--theme-on-background);
+  --color-zinc-200: var(--theme-on-surface);
+  --color-zinc-300: var(--theme-on-surface);
+  --color-zinc-400: var(--theme-on-surface-muted);
+
+  /* Overrides for general slates (tables, buttons, alternative borders) */
+  --color-slate-50: var(--theme-surface-light);
+  --color-slate-100: var(--theme-surface-variant);
+  --color-slate-200: var(--theme-outline);
+  --color-slate-500: var(--theme-on-surface-muted);
+  --color-slate-600: var(--theme-on-surface-muted);
+  --color-slate-700: var(--theme-on-surface);
+  --color-slate-800: var(--theme-on-surface);
+  --color-slate-900: var(--theme-surface);
+}
+
+/* Material 3 ColorSchemes for Premium Aesthetic Themes */
+:root.theme-midnight-orange, body.theme-midnight-orange {
+  --theme-primary: #ff6b00;
+  --theme-primary-hover: #e05e00;
+  --theme-secondary: #ff9e40;
+  --theme-tertiary: #cc5200;
+  --theme-background: #0b0f19;
+  --theme-surface: #151c2c;
+  --theme-surface-variant: #202a3e;
+  --theme-surface-variant-light: #2b3954;
+  --theme-surface-light: #1c273e;
+  --theme-error: #ef4444;
+  --theme-outline: #2e3b55;
+  --theme-on-primary: #050505;
+  --theme-on-background: #f8fafc;
+  --theme-on-surface: #f1f5f9;
+  --theme-on-surface-muted: #94a3b8;
+  --theme-on-secondary: #050505;
+  --theme-primary-50: #fff7ed;
+  --theme-primary-100: #ffedd5;
+  --theme-primary-200: #fed7aa;
+  --theme-primary-300: #fdbb2f;
+  --theme-primary-400: #fb923c;
+}
+
+:root.theme-emerald-velvet, body.theme-emerald-velvet {
+  --theme-primary: #10b981;
+  --theme-primary-hover: #059669;
+  --theme-secondary: #34d399;
+  --theme-tertiary: #047857;
+  --theme-background: #06130e;
+  --theme-surface: #0f291e;
+  --theme-surface-variant: #173e2d;
+  --theme-surface-variant-light: #1f533c;
+  --theme-surface-light: #133325;
+  --theme-error: #ef4444;
+  --theme-outline: #1c4b37;
+  --theme-on-primary: #000000;
+  --theme-on-background: #f0fdf4;
+  --theme-on-surface: #ecfdf5;
+  --theme-on-surface-muted: #86efac;
+  --theme-on-secondary: #000000;
+  --theme-primary-50: #ecfdf5;
+  --theme-primary-100: #d1fae5;
+  --theme-primary-200: #a7f3d0;
+  --theme-primary-300: #6ee7b7;
+  --theme-primary-400: #34d399;
+}
+
+:root.theme-solar-flare, body.theme-solar-flare {
+  --theme-primary: #eab308;
+  --theme-primary-hover: #ca8a04;
+  --theme-secondary: #fde047;
+  --theme-tertiary: #a16207;
+  --theme-background: #181105;
+  --theme-surface: #2c1e08;
+  --theme-surface-variant: #3d2b0c;
+  --theme-surface-variant-light: #4f3810;
+  --theme-surface-light: #35240a;
+  --theme-error: #ef4444;
+  --theme-outline: #5a4013;
+  --theme-on-primary: #000000;
+  --theme-on-background: #fefce8;
+  --theme-on-surface: #fef9c3;
+  --theme-on-surface-muted: #fcd34d;
+  --theme-on-secondary: #000000;
+  --theme-primary-50: #fefce8;
+  --theme-primary-100: #fef9c3;
+  --theme-primary-200: #fef08a;
+  --theme-primary-300: #fde047;
+  --theme-primary-400: #facc15;
+}
+
+:root.theme-cobalt-steel, body.theme-cobalt-steel {
+  --theme-primary: #3b82f6;
+  --theme-primary-hover: #2563eb;
+  --theme-secondary: #60a5fa;
+  --theme-tertiary: #1d4ed8;
+  --theme-background: #0d131f;
+  --theme-surface: #162235;
+  --theme-surface-variant: #22334f;
+  --theme-surface-variant-light: #2e4469;
+  --theme-surface-light: #1c2b42;
+  --theme-error: #ef4444;
+  --theme-outline: #2d4368;
+  --theme-on-primary: #ffffff;
+  --theme-on-background: #eff6ff;
+  --theme-on-surface: #f0f7ff;
+  --theme-on-surface-muted: #93c5fd;
+  --theme-on-secondary: #ffffff;
+  --theme-primary-50: #f0f7ff;
+  --theme-primary-100: #e0f2fe;
+  --theme-primary-200: #bae6fd;
+  --theme-primary-300: #7dd3fc;
+  --theme-primary-400: #38bdf8;
+}
+
+:root.theme-cyber-indigo, body.theme-cyber-indigo {
+  --theme-primary: #6366f1;
+  --theme-primary-hover: #4f46e5;
+  --theme-secondary: #818cf8;
+  --theme-tertiary: #4338ca;
+  --theme-background: #0b0a1a;
+  --theme-surface: #151233;
+  --theme-surface-variant: #211c4d;
+  --theme-surface-variant-light: #2d2669;
+  --theme-surface-light: #1b1740;
+  --theme-error: #ef4444;
+  --theme-outline: #2f2873;
+  --theme-on-primary: #ffffff;
+  --theme-on-background: #e0e7ff;
+  --theme-on-surface: #e0e7ff;
+  --theme-on-surface-muted: #a5b4fc;
+  --theme-on-secondary: #ffffff;
+  --theme-primary-50: #f5f3ff;
+  --theme-primary-100: #ede9fe;
+  --theme-primary-200: #ddd6fe;
+  --theme-primary-300: #c084fc;
+  --theme-primary-400: #a855f7;
+}
+
+:root.theme-cyberpunk-neon, body.theme-cyberpunk-neon {
+  --theme-primary: #d946ef;
+  --theme-primary-hover: #c084fc;
+  --theme-secondary: #06b6d4;
+  --theme-tertiary: #eab308;
+  --theme-background: #0c0214;
+  --theme-surface: #1c052d;
+  --theme-surface-variant: #2e0c47;
+  --theme-surface-variant-light: #401061;
+  --theme-surface-light: #24073a;
+  --theme-error: #f43f5e;
+  --theme-outline: #47146b;
+  --theme-on-primary: #ffffff;
+  --theme-on-background: #fae8ff;
+  --theme-on-surface: #fae8ff;
+  --theme-on-surface-muted: #f472b6;
+  --theme-on-secondary: #000000;
+  --theme-primary-50: #fdf4ff;
+  --theme-primary-100: #fae8ff;
+  --theme-primary-200: #f5d0fe;
+  --theme-primary-300: #f0abfc;
+  --theme-primary-400: #e879f9;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.45);
+}
+
+/* Global improvements */
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accent blinker for typing engine */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-caret {
+  animation: cursor-blink 1s infinite;
+}
+
+/* Smooth scaling and tap highlights */
+button, select, input, textarea {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+@utility animate-shake {
+  animation: shake-animation 0.25s ease-in-out;
+}
+
+@keyframes shake-animation {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-3px); }
+  40%, 80% { transform: translateX(3px); }
+}
