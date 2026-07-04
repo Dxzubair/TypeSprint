@@ -175,7 +175,7 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({ stats, onStatsRe
   };
 
   return (
-    <div className="flex flex-col gap-5 overflow-y-auto max-h-[500px] pr-1">
+    <div className="w-full flex flex-col gap-5 pb-8">
       {/* Dynamic Mode Filter Selection Tabs */}
       <div className="flex bg-slate-100 dark:bg-zinc-950 p-1 rounded-2xl border border-slate-200/40 dark:border-zinc-800/80 self-start">
         <button

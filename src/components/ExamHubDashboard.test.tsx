@@ -45,7 +45,7 @@ vi.mock('../context/AuthContext', () => ({
 
 describe('ExamHubDashboard', () => {
   it('renders correctly', () => {
-    const { container } = render(<ExamHubDashboard  />);
+    const { container } = render(<ExamHubDashboard settings={mockSettings as KeyboardSettings} profile={mockProfile} onSessionComplete={vi.fn()} onNavigateToTab={vi.fn()} />);
     expect(container).toBeTruthy();
   });
 });

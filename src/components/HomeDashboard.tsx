@@ -159,7 +159,7 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
   }, [isCloudActive, profile.name, profile.username]);
 
   return (
-    <div className="flex flex-col gap-4 overflow-y-auto max-h-[385px] pr-1 pb-2 scrollbar-none">
+    <div className="w-full flex flex-col gap-5 pb-8">
       {/* Home Screen Header with Title and Profile Avatar */}
       <div className="flex items-center justify-between bg-slate-50/50 dark:bg-zinc-950/40 p-4 px-5 rounded-2xl border border-slate-100 dark:border-zinc-800/50 shrink-0 shadow-sm">
         {isCloudActive ? (

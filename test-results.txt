@@ -1,0 +1,217 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.9 [39m[90m/app/applet[39m
+
+[90mstdout[2m | src/App.test.tsx
+[22m[39mFirestore connection test: Successfully connected & read test document.
+
+ [32m✓[39m src/App.test.tsx[2m > [22mApp[2m > [22mrenders the main app structure[32m 83[2mms[22m[39m
+ [31m×[39m src/App.test.tsx[2m > [22mApp[2m > [22mnavigates through all tabs[32m 115[2mms[22m[39m
+[31m   → Cannot read properties of undefined (reading 'toLowerCase')[39m
+ [31m×[39m src/tests/betaFeedback.test.tsx[2m > [22mBeta Feedback End-to-End[2m > [22mtriggers the BetaFeedbackModal, fills form, submits, and verifies in Firestore[32m 143[2mms[22m[39m
+[31m   → Unable to find an element with the text: /Settings/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"min-h-screen bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 flex flex-col md:flex-row relative overflow-x-hidden"[31m
+      [36m>[31m
+        [36m<aside[31m
+          [33mclass[31m=[32m"
+        fixed inset-y-0 left-0 z-50 bg-white dark:bg-zinc-900 border-r border-slate-200/60 dark:border-zinc-800/60 flex flex-col shrink-0 transition-all duration-300 ease-in-out
+        md:static md:translate-x-0
+        w-64
+        -translate-x-full
+      "[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"p-5 border-b border-slate-100 dark:border-zinc-800/40 flex items-center justify-between gap-3"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center gap-3 overflow-hidden"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"bg-amber-500/10 p-2 rounded-xl border border-amber-500/20 text-amber-500 shrink-0"[31m
+              [36m>[31m
+                [36m<svg[31m
+                  [33mclass[31m=[32m"lucide lucide-keyboard w-5 h-5"[31m
+                  [33mfill[31m=[32m"none"[31m
+                  [33mheight[31m=[32m"24"[31m
+                  [33mstroke[31m=[32m"currentColor"[31m
+                  [33mstroke-linecap[31m=[32m"round"[31m
+                  [33mstroke-linejoin[31m=[32m"round"[31m
+                  [33mstroke-width[31m=[32m"2"[31m
+                  [33mviewBox[31m=[32m"0 0 24 24"[31m
+                  [33mwidth[31m=[32m"24"[31m
+                  [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+                [36m>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M10 8h.01"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M12 12h.01"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M14 8h.01"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M16 12h.01"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M18 8h.01"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M6 8h.01"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M7 16h10"[31m
+                  [36m/>[31m
+                  [36m<path[31m
+                    [33md[31m=[32m"M8 12h.01"[31m
+                  [36m/>[31m
+                  [36m<rect[31m
+                    [33mheight[31m=[32m"16"[31m
+                    [33mrx[31m=[32m"2"[31m
+                    [33mwidth[31m=[32m"20"[31m
+                    [33mx[31m=[32m"2"[31m
+                    [33my[31m=[32m"4"[31m
+                  [36m/>[31m
+                [36m</svg>[31m
+              [36m</div>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"animate-fade-in"[31m
+              [36m>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"text-sm font-black tracking-tight text-slate-800 dark:text-zinc-100 block font-display"[31m
+                [36m>[31m
+                  [0mTypeSprint PRO[0m
+                [36m</span>[31m
+                [36m<span[31m
+                  [33mclass[31m=[32m"text-[10px] text-slate-400 font-bold tracking-wider uppercase block font-mono"[31m
+                [36m>[31m
+                  [0mTactile Trainer[0m
+                [36m</span>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"hidden md:flex p-1.5 bg-slate-50 hover:bg-slate-100 dark:bg-zinc-800/40 dark:hover:bg-zinc-800/80 rounded-lg text-slate-500 dark:text-zinc-400 cursor-pointer border border-slate-200/50 dark:border-zinc-800/50"[31m
+              [33mtitle[31m=[32m"Collapse Sidebar"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33mclass[31m=[32m"lucide lucide-chevron-left w-4 h-4"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"24"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+                [33mviewBox[31m=[32m"0 0 24 24"[31m
+                [33mwidth[31m=[32m"24"[31m
+                [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"m15 18-6-6 6-6"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"md:hidden p-1.5 bg-slate-50 hover:bg-slate-100 dark:bg-zinc-800/40 dark:hover:bg-zinc-800/80 rounded-lg text-slate-500 dark:text-zinc-400 cursor-pointer"[31m
+              [33mtitle[31m=[32m"Close Menu"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33mclass[31m=[32m"lucide lucide-x w-4 h-4"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"24"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+                [33mviewBox[31m=[32m"0 0 24 24"[31m
+                [33mwidth[31m=[32m"24"[31m
+                [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+              [36m>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"M18 6 6 18"[31m
+                [36m/>[31m
+                [36m<path[31m
+                  [33md[31m=[32m"m6 6 12 12"[31m
+                [36m/>[31m
+              [36m</svg>[31m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<nav[31m
+            [33mclass[31m=[32m"flex-grow p-4 flex flex-col gap-1 overflow-y-auto"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"w-full flex items-center transition-all text-left cursor-pointer group gap-3 px-3.5 py-2.5 rounded-xl bg-amber-500 dark:bg-amber-500/10 text-zinc-950 dark:text-amber-400 shadow-sm border border-amber-500/20"[31m
+            [36m>[31m
+              [36m<svg[31m
+                [33mclass[31m=[32m"lucide lucide-layout-dashboard w-4 h-4 shrink-0 text-zinc-950 dark:text-amber-400"[31m
+                [33mfill[31m=[32m"none"[31m
+                [33mheight[31m=[32m"24"[31m
+                [33mstroke[31m=[32m"currentColor"[31m
+                [33mstroke-linecap[31m=[32m"round...[39m
+[90mstdout[2m | src/components/AuthModal.test.tsx
+[22m[39mFirestore connection test: Successfully connected & read test document.
+
+ [31m×[39m src/components/AuthModal.test.tsx[2m > [22mAuthModal[2m > [22mrenders correctly[32m 38[2mms[22m[39m
+[31m   → Cannot read properties of undefined (reading 'username')[39m
+ [31m×[39m src/components/ExamHubDashboard.test.tsx[2m > [22mExamHubDashboard[2m > [22mrenders correctly[32m 55[2mms[22m[39m
+[31m   → Cannot read properties of undefined (reading 'name')[39m
+ [31m×[39m src/components/AchievementsShelf.test.tsx[2m > [22mAchievementsShelf[2m > [22mrenders correctly[32m 23[2mms[22m[39m
+[31m   → Cannot read properties of undefined (reading 'name')[39m
+[90mstdout[2m | src/components/LeaderboardsDashboard.test.tsx
+[22m[39mFirestore connection test: Successfully connected & read test document.
+
+ [31m×[39m src/components/LeaderboardsDashboard.test.tsx[2m > [22mLeaderboardsDashboard[2m > [22mrenders correctly[32m 27[2mms[22m[39m
+[31m   → Cannot read properties of undefined (reading 'name')[39m
+[90mstdout[2m | src/components/ParagraphHubDashboard.test.tsx
+[22m[39mFirestore connection test: Successfully connected & read test document.
+
+ [32m✓[39m src/components/ParagraphHubDashboard.test.tsx[2m > [22mParagraphHubDashboard[2m > [22mrenders correctly[33m 892[2mms[22m[39m
+ [32m✓[39m src/components/ReportParagraphSheet.test.tsx[2m > [22mReportParagraphSheet[2m > [22mrenders and submits a report[32m 233[2mms[22m[39m
+[90mstdout[2m | src/components/TypingEngine.test.tsx
+[22m[39mFirestore connection test: Successfully connected & read test document.
+
+ [32m✓[39m src/components/TypingEngine.test.tsx[2m > [22mTypingEngine[2m > [22mrenders correctly[32m 78[2mms[22m[39m
+ [32m✓[39m src/components/TypingEngine.test.tsx[2m > [22mTypingEngine[2m > [22mhandles keystrokes and updates stats[32m 24[2mms[22m[39m
+ [32m✓[39m src/components/TypingEngine.test.tsx[2m > [22mTypingEngine[2m > [22mcompletes the session when text is fully typed[32m 16[2mms[22m[39m
+ [32m✓[39m src/components/SettingsPanel.test.tsx[2m > [22mSettingsPanel[2m > [22mrenders correctly[32m 81[2mms[22m[39m
+ [32m✓[39m src/components/RewardHub.test.tsx[2m > [22mRewardHub[2m > [22mrenders correctly[32m 83[2mms[22m[39m
+ [32m✓[39m src/components/ProfileDashboard.test.tsx[2m > [22mProfileDashboard[2m > [22mrenders correctly[32m 58[2mms[22m[39m
+ [32m✓[39m src/components/GameZone.test.tsx[2m > [22mGameZone[2m > [22mrenders correctly[32m 65[2mms[22m[39m
+ [32m✓[39m src/components/StatsDashboard.test.tsx[2m > [22mStatsDashboard[2m > [22mrenders correctly[32m 34[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mProfile Storage[2m > [22mloads initial profile when empty[32m 3[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mProfile Storage[2m > [22msaves and loads custom profile[32m 1[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mStats & XP System[2m > [22madds rewards and levels up correctly[32m 1[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mStats & XP System[2m > [22maccumulates XP across multiple levels[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mSession Processing[2m > [22mprocesses a completed session correctly[32m 16[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mSession Processing[2m > [22midentifies new personal bests[32m 1[2mms[22m[39m
+ [32m✓[39m src/utils/storage.test.ts[2m > [22mStorage Utilities[2m > [22mMistyped Keys[2m > [22mregisters mistyped keys[32m 1[2mms[22m[39m
+[90mstdout[2m | src/utils/sync.test.ts[2m > [22m[2mSync Utilities[2m > [22m[2msyncUserData[2m > [22m[2mcreates a new document if one does not exist
+[22m[39m[Sync] Initiating cloud sync for user test-user-123...
+[Sync] Syncing Profile XP: 150, Level: 1
+[Sync] Syncing Stats - Total Sessions: 0, Best WPM: 0
+[Sync] Syncing Achievements count: 9
+
+[90mstdout[2m | src/utils/sync.test.ts[2m > [22m[2mSync Utilities[2m > [22m[2msyncUserData[2m > [22m[2mcreates a new document if one does not exist
+[22m[39mProgress auto-synced to cloud successfully.
+
+ [32m✓[39m src/utils/sync.test.ts[2m > [22mSync Utilities[2m > [22msanitizeForFirestore[2m > [22mremoves undefined values from objects[32m 2[2mms[22m[39m
+ [32m✓[39m src/utils/sync.test.ts[2m > [22mSync Utilities[2m > [22msanitizeForFirestore[2m > [22mprocesses arrays correctly[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/sync.test.ts[2m > [22mSync Utilities[2m > [22msyncUserData[2m > [22mmerges cloud and local data correctly[32m 7[2mms[22m[39m
+ [32m✓[39m src/utils/sync.test.ts[2m > [22mSync Utilities[2m > [22msyncUserData[2m > [22mcreates a new document if one does not exist[32m 4[2mms[22m[39m
+ [32m✓[39m src/utils/analyticsEngine.test.ts[2m > [22mAnalyticsEngine[2m > [22mcalculateMetrics[2m > [22mcalculates correct WPM and accuracy for a normal session[32m 2[2mms[22m[39m
+ [32m✓[39m src/utils/analyticsEngine.test.ts[2m > [22mAnalyticsEngine[2m > [22mcalculateMetrics[2m > [22mcalculates correct WPM and accuracy with mistakes[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/analyticsEngine.test.ts[2m > [22mAnalyticsEngine[2m > [22mcalculateMetrics[2m > [22mhandles zero elapsed time gracefully[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/analyticsEngine.test.ts[2m > [22mAnalyticsEngine[2m > [22mcalculateMetrics[2m > [22mhandles extremely high WPM gracefully[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/analyticsEngine.test.ts[2m > [22mAnalyticsEngine[2m > [22mcalculateMetrics[2m > [22mhandles extremely low WPM[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/analyticsEngine.test.ts[2m > [22mAnalyticsEngine[2m > [22mcalculateMetrics[2m > [22mhandles negative or unusual combinations safely[32m 0[2mms[22m[39m
+ [32m✓[39m src/utils/keyboardDetector.test.ts[2m > [22mKeyboardDetector[2m > [22mdetects mobile user agents[32m 2[2mms[22m[39m
+
+[2m Test Files [22m [1m[31m6 failed[39m[22m[2m | [22m[1m[32m12 passed[39m[22m[90m (18)[39m
+[2m      Tests [22m [1m[31m6 failed[39m[22m[2m | [22m[1m[32m29 passed[39m[22m[90m (35)[39m
+[2m   Start at [22m 15:16:08
+[2m   Duration [22m 34.86s[2m (transform 1.06s, setup 1.98s, import 5.59s, tests 2.14s, environment 20.53s)[22m
+

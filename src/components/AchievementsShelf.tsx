@@ -56,7 +56,7 @@ export const AchievementsShelf: React.FC<AchievementsShelfProps> = ({
   const unlockedCount = achievements.filter(a => a.unlocked).length;
 
   return (
-    <div className="flex flex-col gap-4 overflow-y-auto max-h-[385px] pr-1 pb-2">
+    <div className="w-full flex flex-col gap-5 pb-8">
       {/* Gamification profile header card */}
       <div className="bg-gradient-to-r from-zinc-900 to-zinc-950 border border-slate-200/40 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm relative overflow-hidden">
         <div className="absolute right-0 bottom-0 translate-y-1/4 translate-x-1/4 opacity-10 pointer-events-none">

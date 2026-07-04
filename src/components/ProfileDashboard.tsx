@@ -92,7 +92,7 @@ export const ProfileDashboard: React.FC<ProfileDashboardProps> = ({
   ];
 
   return (
-    <div className="flex flex-col gap-4 overflow-y-auto max-h-[385px] pr-1 pb-4 text-xs scrollbar-none">
+    <div className="w-full flex flex-col gap-5 pb-8 text-xs">
       
       {/* 1. LARGE PROFILE AVATAR & PILOT SUMMARY CARD */}
       <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-slate-200/20 dark:border-zinc-800/80 p-5 rounded-3xl shadow-lg relative overflow-hidden flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">

@@ -107,6 +107,7 @@ export interface UserProfile {
   xp: number;
   level: number;
   name: string;
+  username?: string;
   coins: number;
   gems?: number; // Premium rare currency
   selectedAvatar: string;

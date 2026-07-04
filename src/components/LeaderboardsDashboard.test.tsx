@@ -34,7 +34,7 @@ vi.mock('../context/AuthContext', () => ({
 import { LeaderboardsDashboard } from './LeaderboardsDashboard';
 describe('LeaderboardsDashboard', () => {
   it('renders correctly', () => {
-    const { container } = render(<LeaderboardsDashboard  />);
+    const { container } = render(<LeaderboardsDashboard profile={mockProfile} stats={mockStats} onTriggerRace={vi.fn()} />);
     expect(container).toBeTruthy();
   });
 });

@@ -45,7 +45,7 @@ vi.mock('../context/AuthContext', () => ({
 
 describe('AchievementsShelf', () => {
   it('renders correctly', () => {
-    const { container } = render(<AchievementsShelf  />);
+    const { container } = render(<AchievementsShelf achievements={[]} dailyChallenges={[]} profile={mockProfile as UserProfile} />);
     expect(container).toBeTruthy();
   });
 });

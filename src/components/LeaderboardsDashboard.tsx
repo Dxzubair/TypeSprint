@@ -264,7 +264,7 @@ export const LeaderboardsDashboard: React.FC<LeaderboardsProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 overflow-y-auto max-h-[385px] pr-1 pb-2">
+    <div className="w-full flex flex-col gap-5 pb-8">
       {/* Dynamic Leaderboard Subtabs */}
       <div className="flex bg-slate-100 dark:bg-zinc-950 p-1 rounded-xl border border-slate-200/40 dark:border-zinc-800/60 select-none overflow-x-auto scrollbar-none shrink-0 gap-1">
         {[

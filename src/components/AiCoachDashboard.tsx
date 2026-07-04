@@ -105,7 +105,7 @@ export const AiCoachDashboard: React.FC<AiCoachDashboardProps> = ({ stats, profi
   };
 
   return (
-    <div className="flex flex-col gap-4 overflow-y-auto max-h-[385px] pr-1 pb-2">
+    <div className="w-full flex flex-col gap-5 pb-8">
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-amber-500/10 to-orange-600/10 dark:from-amber-500/5 dark:to-orange-600/5 border border-amber-500/20 dark:border-amber-500/10 p-4 rounded-2xl flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-3">

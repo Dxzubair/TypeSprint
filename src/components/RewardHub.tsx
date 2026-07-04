@@ -677,7 +677,7 @@ export const RewardHub: React.FC<RewardHubProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-5 overflow-y-auto max-h-[500px] pr-1 pb-4 select-none">
+    <div className="w-full flex flex-col gap-5 pb-8 select-none">
       
       {/* Floating self-contained custom confetti particle canvas */}
       <div className="fixed inset-0 pointer-events-none z-50">

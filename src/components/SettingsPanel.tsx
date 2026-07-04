@@ -167,7 +167,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 overflow-y-auto max-h-[385px] pr-1 pb-2 text-xs">
+    <div className="w-full flex flex-col gap-5 pb-8 text-xs">
       {/* 0. Cloud Backup & Authentication Sync */}
       <div className="bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 border border-zinc-800 p-4 rounded-3xl shadow-sm flex flex-col gap-3 text-white">
         <h4 className="text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 border-b border-zinc-800/80 pb-1.5 text-zinc-400">

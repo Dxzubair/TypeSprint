@@ -45,7 +45,7 @@ vi.mock('../context/AuthContext', () => ({
 
 describe('AuthModal', () => {
   it('renders correctly', () => {
-    const { container } = render(<AuthModal isOpen={true} onClose={vi.fn()} />);
+    const { container } = render(<AuthModal isOpen={true} onClose={vi.fn()} profile={mockProfile as UserProfile} stats={mockStats} achievements={[]} settings={mockSettings as KeyboardSettings} onUpdateAllData={vi.fn()} />);
     expect(container).toBeTruthy();
   });
 });
