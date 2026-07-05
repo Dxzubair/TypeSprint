@@ -40,8 +40,7 @@ service cloud.firestore {
              (!data.keys().contains('stats') || (
                data.stats is map &&
                data.stats.keys().hasOnly(['bestWpm', 'avgWpm', 'bestAccuracy', 'avgAccuracy', 'totalSessions', 'totalMinutes', 'totalCorrectKeystrokes', 'totalIncorrectKeystrokes', 'totalAccuracy', 'lifetimeAccuracy', 'streak', 'longestStreak', 'lastPracticeDate', 'mistypedKeys', 'history']) &&
-               (!data.stats.keys().contains('bestWpm') || (data.stats.bestWpm is number && data.stats.bestWpm >= 0 && data.stats.bestWpm <= 500)) &&
-               (!data.stats.keys().contains('avgWpm') || (data.stats.avgWpm is number && data.stats.avgWpm >= 0 && data.stats.avgWpm <= 500))
+               (!data.stats.keys().contains('bestWpm') || (data.stats.bestWpm is number && data.stats.bestWpm >= 0 && data.stats.bestWpm <= 500))
              )) &&
              (!data.keys().contains('achievements') || data.achievements is list) &&
              (!data.keys().contains('settings') || (
@@ -88,10 +87,8 @@ service cloud.firestore {
       
       match /custom_paragraphs/{paragraphId} {
         allow read: if isOwner(userId) && isValidId(paragraphId);
-        allow create, update: if isOwner(userId) && isValidId(paragraphId) && 
-                              incoming().text is string && 
-                              incoming().text.size() <= 5000;
-        allow delete: if isOwner(userId) && isValidId(paragraphId);
+        allow write: if isOwner(userId) && isValidId(paragraphId) && 
+                     (!incoming().keys().contains('content') || (incoming().content is string && incoming().content.size() <= 5000));
       }
     }
 
@@ -109,16 +106,14 @@ service cloud.firestore {
     }
 
     match /beta_feedback/{feedbackId} {
-      allow read, delete: if isSignedIn();
-      allow create, update: if isSignedIn() && 
-                            (!incoming().keys().contains('message') || (incoming().message is string && incoming().message.size() <= 1000));
+      allow read, write: if isSignedIn() && 
+                         (!incoming().keys().contains('message') || (incoming().message is string && incoming().message.size() <= 5000));
     }
 
     match /paragraph_reports/{reportId} {
-      allow read, delete: if isSignedIn();
-      allow create, update: if isSignedIn() && 
-                            (!incoming().keys().contains('comment') || (incoming().comment is string && incoming().comment.size() <= 1000)) &&
-                            (!incoming().keys().contains('content') || (incoming().content is string && incoming().content.size() <= 1000));
+      allow read, write: if isSignedIn() && 
+                         (!incoming().keys().contains('comment') || (incoming().comment is string && incoming().comment.size() <= 5000)) &&
+                         (!incoming().keys().contains('content') || (incoming().content is string && incoming().content.size() <= 5000));
     }
   }
 }

@@ -156,7 +156,6 @@ export interface UserProfile {
   onboardingCompleted?: boolean;
 
   // Authentication and Profile Fields
-  username?: string;
   email?: string;
   profilePhoto?: string;
   country?: string;

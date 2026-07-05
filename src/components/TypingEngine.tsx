@@ -238,7 +238,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
   const sourceTokensForTarget = sourceText.split(/( |\n)/g);
   const activeTargetToken = sourceTokensForTarget[typedTokensForTarget.length - 1];
   const activeTypedToken = typedTokensForTarget[typedTokensForTarget.length - 1];
-  let currentTargetChar = (activeTargetToken !== undefined && activeTypedToken !== undefined) ? activeTargetToken[activeTypedToken.length] : undefined;
+  let currentTargetChar: string | null | undefined = (activeTargetToken !== undefined && activeTypedToken !== undefined) ? activeTargetToken[activeTypedToken.length] : undefined;
   if (currentTargetChar === undefined) {
     currentTargetChar = sourceTokensForTarget[typedTokensForTarget.length];
   }
@@ -1261,7 +1261,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
           <VirtualKeyboard
             layout={settings.layout}
             activeKeys={activeKeys}
-            nextKey={currentTargetChar}
+            nextKey={currentTargetChar || null}
             showFingerGuide={settings.showFingerGuide}
             lastTypedStatus={lastTypedStatus}
           />
