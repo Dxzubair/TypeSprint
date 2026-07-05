@@ -5,6 +5,7 @@ import {
   Flame, Target, AlertCircle, TrendingUp, Lightbulb, GraduationCap, CheckCircle
 } from 'lucide-react';
 import { TypingStats, UserProfile } from '../types';
+import { auth } from '../utils/firebase';
 
 interface AiCoachDashboardProps {
   stats: TypingStats;
@@ -36,12 +37,20 @@ export const AiCoachDashboard: React.FC<AiCoachDashboardProps> = ({ stats, profi
     setLoading(true);
     setError(null);
     try {
+      let idToken = '';
+      if (auth?.currentUser) {
+        idToken = await auth.currentUser.getIdToken();
+      } else {
+        throw new Error('User not authenticated. Please sign in to access AI Coach.');
+      }
+
       const response = await fetch(
         (typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'http://localhost') + '/api/ai-coach', 
         {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${idToken}`,
         },
         body: JSON.stringify({
           stats,
