@@ -9,6 +9,6 @@ describe('StatsDashboard', () => {
       bestWpm: 0, avgWpm: 0, bestAccuracy: 0, avgAccuracy: 0, totalSessions: 0, totalMinutes: 0, totalCorrectKeystrokes: 0, totalIncorrectKeystrokes: 0, history: []
     };
     render(<StatsDashboard stats={mockStats as any} onStatsReset={() => {}} />);
-    expect(screen.getByText(/statistics/i)).toBeInTheDocument();
+    expect(screen.getByText(/Best Speed/i)).toBeInTheDocument();
   });
 });

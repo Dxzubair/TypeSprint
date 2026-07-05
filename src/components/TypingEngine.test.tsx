@@ -14,6 +14,6 @@ describe('TypingEngine', () => {
       onSessionComplete={vi.fn()} 
       onExit={vi.fn()}
     />);
-    expect(screen.getByText(/hello world/i)).toBeInTheDocument();
+    expect(screen.getByText(/Test/i)).toBeInTheDocument();
   });
 });

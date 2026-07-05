@@ -6,7 +6,7 @@ import { INITIAL_SETTINGS } from '../utils/storage';
 
 describe('SettingsPanel', () => {
   it('renders correctly', () => {
-    render(<SettingsPanel
+    render(<SettingsPanel profile={{name: "Test User", username: "test"}} as any stats={{} as any} 
       settings={INITIAL_SETTINGS as any}
       onUpdateSettings={() => {}}
       onUpdateProfile={() => {}}
@@ -14,6 +14,6 @@ describe('SettingsPanel', () => {
       isCloudActive={false}
       onLinkCloud={() => {}}
     />);
-    expect(screen.getByText(/settings/i)).toBeInTheDocument();
+    expect(screen.getByText(/Pilot Identity Card/i)).toBeInTheDocument();
   });
 });

@@ -10,6 +10,8 @@ vi.unmock('firebase/firestore');
 import App from '../App';
 import { db } from '../utils/firebase';
 import { collection, getDocs, query, where, deleteDoc } from 'firebase/firestore';
+import { signInAnonymously } from 'firebase/auth';
+import { auth } from '../utils/firebase';
 
 vi.mock('../utils/sync', () => ({
   syncUserData: vi.fn(),
@@ -33,6 +35,13 @@ global.ResizeObserver = class ResizeObserver {
 };
 
 describe('Beta Feedback End-to-End', () => {
+  beforeAll(async () => {
+    try {
+      await signInAnonymously(auth);
+    } catch (e) {
+      console.warn('Failed to sign in anonymously for test:', e);
+    }
+  });
   it('triggers the BetaFeedbackModal, fills form, submits, and verifies in Firestore', async () => {
     // Generate a unique message to verify in Firestore
     const uniqueMessage = `Test E2E Feedback ${Date.now()}`;

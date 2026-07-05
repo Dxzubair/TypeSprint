@@ -162,7 +162,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
     if (current === target) return true;
     if (current === 'SHIFT_L' || current === 'SHIFT_R') {
       // Highlight shift key if target is uppercase or a special upper symbol
-      const needsShift = nextKey !== nextKey.toLowerCase() && nextKey.match(/[A-Z!@#$%^&*()_+{}|:"<>?~`]/);
+      const needsShift = nextKey && nextKey !== nextKey.toLowerCase() && nextKey.match(/[A-Z!@#$%^&*()_+{}|:"<>?~`]/);
       return !!needsShift;
     }
 

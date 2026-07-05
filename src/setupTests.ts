@@ -40,6 +40,18 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
+vi.mock('/src/context/AuthContext', () => ({
+  useAuth: () => ({
+    user: { uid: '123', displayName: 'Test User' },
+    loading: false,
+    isAnonymous: false,
+    loginWithGoogle: vi.fn(),
+    logout: vi.fn(),
+    isFirebaseActive: true
+  }),
+  AuthProvider: ({ children }: any) => {children}
+}));
+
 vi.mock('firebase/app', () => ({
   initializeApp: vi.fn(),
 }));
