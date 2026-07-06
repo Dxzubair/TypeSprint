@@ -24,14 +24,14 @@ export const AchievementsShelf: React.FC<AchievementsShelfProps> = ({
     if (isCloudActive && user?.displayName) {
       return user.displayName;
     }
-    if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+    if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
       return profile.name;
     }
-    if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+    if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
       return profile.username;
     }
     return isCloudActive ? 'Pilot' : 'Guest';
-  }, [isCloudActive, user?.displayName, profile.name, profile.username]);
+  }, [isCloudActive, user?.displayName, profile?.name, profile?.username]);
 
   // Mapping string to actual Lucide Icon
   const getIcon = (name: string) => {

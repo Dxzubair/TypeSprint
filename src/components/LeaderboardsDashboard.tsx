@@ -29,14 +29,14 @@ export const LeaderboardsDashboard: React.FC<LeaderboardsProps> = ({
     if (isCloudActive && user?.displayName) {
       return user.displayName;
     }
-    if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+    if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
       return profile.name;
     }
-    if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+    if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
       return profile.username;
     }
     return isCloudActive ? 'Pilot' : 'Guest';
-  }, [isCloudActive, user?.displayName, profile.name, profile.username]);
+  }, [isCloudActive, user?.displayName, profile?.name, profile?.username]);
 
   // Tabs: racing, global, country, friends, weekly, monthly
   const [subTab, setSubTab] = useState<'racing' | 'global' | 'country' | 'friends' | 'weekly' | 'monthly'>('racing');
@@ -190,7 +190,7 @@ export const LeaderboardsDashboard: React.FC<LeaderboardsProps> = ({
 
     // Apply Search Query filter
     if (searchQuery.trim()) {
-      list = list.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      list = list.filter(item => item.name?.toLowerCase().includes(searchQuery.toLowerCase()));
     }
 
     // Apply Layout filter

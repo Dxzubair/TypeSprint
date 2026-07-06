@@ -74,9 +74,9 @@ async function checkWebHID() {
       (d.productName && d.productName.toLowerCase().includes('keyboard'))
     );
     if (keyboard) {
-      const isBT = keyboard.productName.toLowerCase().includes('bluetooth') || 
-                   keyboard.productName.toLowerCase().includes('wireless') ||
-                   keyboard.productName.toLowerCase().includes('keychron');
+      const isBT = keyboard.productName?.toLowerCase().includes('bluetooth') || 
+                   keyboard.productName?.toLowerCase().includes('wireless') ||
+                   keyboard.productName?.toLowerCase().includes('keychron');
       updateStatus({
         status: isBT ? 'bluetooth' : 'usb',
         name: keyboard.productName || (isBT ? 'Bluetooth Keyboard' : 'USB Keyboard'),

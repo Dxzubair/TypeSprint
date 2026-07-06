@@ -58,26 +58,26 @@ export const ProfileDashboard: React.FC<ProfileDashboardProps> = ({
 
   const resolvedName = React.useMemo(() => {
     if (isCloudActive) {
-      if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+      if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
         return profile.name;
       }
-      if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+      if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
         return profile.username;
       }
       return 'Pilot';
     }
-    if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+    if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
       return profile.name;
     }
-    if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+    if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
       return profile.username;
     }
     return 'Guest';
-  }, [isCloudActive, profile.name, profile.username]);
+  }, [isCloudActive, profile?.name, profile?.username]);
 
   // Fallback credentials
-  const emailText = profile.email || (isCloudActive && user?.email) || 'guest@typesprint.com';
-  const usernameText = profile.username || resolvedName.toLowerCase().replace(/\s+/g, '_');
+  const emailText = profile?.email || (isCloudActive && user?.email) || 'guest@typesprint.com';
+  const usernameText = profile?.username || (resolvedName ? resolvedName.toLowerCase().replace(/\s+/g, '_') : 'guest');
   const joinDateText = 'July 2, 2026'; // static / simulated but premium and realistic
   const globalRankText = '#1,248 (Top 2.5%)'; // future ready ranking system
 

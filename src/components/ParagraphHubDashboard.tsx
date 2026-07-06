@@ -221,11 +221,11 @@ export function ParagraphHubDashboard({ onSessionComplete, profile, stats, setti
     // Search query checks
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      const matchTitle = p.title.toLowerCase().includes(q);
-      const matchContent = p.content.toLowerCase().includes(q);
-      const matchCategory = p.category.toLowerCase().includes(q);
+      const matchTitle = p.title?.toLowerCase().includes(q) || false;
+      const matchContent = p.content?.toLowerCase().includes(q) || false;
+      const matchCategory = p.category?.toLowerCase().includes(q) || false;
       const matchExam = p.exam ? p.exam.toLowerCase().includes(q) : false;
-      const matchTags = p.tags.some(tag => tag.toLowerCase().includes(q));
+      const matchTags = p.tags?.some(tag => tag?.toLowerCase().includes(q)) || false;
       if (!matchTitle && !matchContent && !matchCategory && !matchExam && !matchTags) return false;
     }
 

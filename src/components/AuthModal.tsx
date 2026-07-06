@@ -394,7 +394,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <div className="flex flex-col gap-1">
                     <span className="font-bold text-slate-500 dark:text-zinc-400">Username:</span>
                     <span className="font-mono text-slate-800 dark:text-zinc-200 font-bold">
-                      {profile.username || 'Not configured'}
+                      {profile?.username || 'Not configured'}
                     </span>
                   </div>
                   <div className="flex flex-col gap-1">

@@ -44,25 +44,25 @@ export const AccountBottomSheet: React.FC<AccountBottomSheetProps> = ({
 
   const resolvedName = React.useMemo(() => {
     if (isCloudActive) {
-      if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+      if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
         return profile.name;
       }
-      if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+      if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
         return profile.username;
       }
       return 'Pilot';
     }
-    if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+    if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
       return profile.name;
     }
-    if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+    if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
       return profile.username;
     }
     return 'Guest';
-  }, [isCloudActive, profile.name, profile.username]);
+  }, [isCloudActive, profile?.name, profile?.username]);
 
-  const usernameText = profile.username || resolvedName.toLowerCase().replace(/\s+/g, '');
-  const emailText = profile.email || 'guest@typesprint.com';
+  const usernameText = profile?.username || (resolvedName ? resolvedName.toLowerCase().replace(/\s+/g, '') : 'guest');
+  const emailText = profile?.email || 'guest@typesprint.com';
 
   return (
     <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-xs flex items-end justify-center z-50 select-none">

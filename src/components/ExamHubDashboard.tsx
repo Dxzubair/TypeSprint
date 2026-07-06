@@ -60,14 +60,14 @@ export const ExamHubDashboard: React.FC<ExamHubDashboardProps> = ({
     if (isCloudActive && user?.displayName) {
       return user.displayName;
     }
-    if (profile.name && profile.name.trim() !== '' && profile.name !== 'Tactile Pilot') {
+    if (profile?.name && profile?.name.trim() !== '' && profile?.name !== 'Tactile Pilot') {
       return profile.name;
     }
-    if (profile.username && profile.username.trim() !== '' && profile.username !== 'tactile_pilot') {
+    if (profile?.username && profile?.username.trim() !== '' && profile?.username !== 'tactile_pilot') {
       return profile.username;
     }
     return isCloudActive ? 'Pilot' : 'Guest';
-  }, [isCloudActive, user?.displayName, profile.name, profile.username]);
+  }, [isCloudActive, user?.displayName, profile?.name, profile?.username]);
 
   // Database States loaded locally
   const [exams, setExams] = useState<ExamRule[]>(EXAM_RULES_DATA as ExamRule[]);
@@ -332,9 +332,9 @@ export const ExamHubDashboard: React.FC<ExamHubDashboardProps> = ({
 
   const sortedAndFilteredExams = React.useMemo(() => {
     let result = exams.filter(ex => 
-      ex.examName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      ex.organization.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      ex.postName.toLowerCase().includes(searchQuery.toLowerCase())
+      ex.examName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ex.organization?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ex.postName?.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     if (sortBy === 'favorites') {
