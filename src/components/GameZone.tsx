@@ -113,7 +113,7 @@ export function GameZone({ profile, stats, settings, onUpdateStatsAndProfile, on
           return parsed;
         }
       }
-    } catch (e) {}
+    } catch (e) { /* ignore */ }
     return {
       meteor_strike: { bestScore: 0, bestWpm: 0, bestAccuracy: 0, gamesPlayed: 0, lastPlayed: '' },
       speed_racer: { bestScore: 0, bestWpm: 0, bestAccuracy: 0, gamesPlayed: 0, lastPlayed: '' },

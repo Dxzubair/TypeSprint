@@ -270,7 +270,7 @@ export const RewardHub: React.FC<RewardHubProps> = ({
     }
 
     // Mutate lists
-    let listSource = type === 'daily' ? dailyMissionsList : type === 'weekly' ? weeklyMissionsList : monthlyMissionsList;
+    const listSource = type === 'daily' ? dailyMissionsList : type === 'weekly' ? weeklyMissionsList : monthlyMissionsList;
     const updatedList = listSource.map(m => m.id === id ? { ...m, claimed: true } : m);
     updater(updatedList);
 

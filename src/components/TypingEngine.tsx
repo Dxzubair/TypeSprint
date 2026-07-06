@@ -716,7 +716,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
                 const tChar = typedToken ? typedToken[j] : undefined;
 
                 let colorClass = 'text-slate-400 dark:text-zinc-600';
-                let isCursor = isActive && j === (typedToken ? typedToken.length : 0);
+                const isCursor = isActive && j === (typedToken ? typedToken.length : 0);
 
                 if (tChar === undefined) {
                   if (!isActive && sChar !== undefined) {

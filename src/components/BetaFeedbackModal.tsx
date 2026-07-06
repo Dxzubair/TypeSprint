@@ -47,7 +47,7 @@ export const BetaFeedbackModal: React.FC<BetaFeedbackModalProps> = ({ isOpen, on
 
     const userAgent = navigator.userAgent;
     const isAndroid = /Android/i.test(userAgent);
-    const androidVersionMatch = userAgent.match(/Android\s([0-9\.]*)/);
+    const androidVersionMatch = userAgent.match(/Android\s([0-9.]*)/);
     const androidVersion = isAndroid && androidVersionMatch ? androidVersionMatch[1] : 'N/A';
     
     // Simplistic device extraction

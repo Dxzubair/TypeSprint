@@ -49,7 +49,7 @@ vi.mock('/src/context/AuthContext', () => ({
     logout: vi.fn(),
     isFirebaseActive: true
   }),
-  AuthProvider: ({ children }: any) => {children}
+  AuthProvider: ({ children }: any) => children
 }));
 
 vi.mock('firebase/app', () => ({

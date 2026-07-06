@@ -249,7 +249,7 @@ class AudioSynthesizer {
         let gain1Val = 0.15;
         let gain2Val = 0.25;
         let osc1Type: OscillatorType = 'triangle';
-        let osc2Type: OscillatorType = 'sine';
+        const osc2Type: OscillatorType = 'sine';
 
         // Apply profile-specific base adjustments
         if (type === 'cherry_mx_blue') {
