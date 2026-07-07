@@ -24,5 +24,32 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build with Gradle
-      run: ./gradlew assembleDebug
+    - name: Generate Release Keystore
+      run: |
+        keytool -genkey -v -keystore app/release.keystore -alias alias -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=TypeSprint, OU=App, O=TypeSprint, L=City, S=State, C=US"
+
+    - name: Build Release APK
+      run: ./gradlew assembleRelease
+      env:
+        KEYSTORE_PASSWORD: password
+        KEY_ALIAS: alias
+        KEY_PASSWORD: password
+
+    - name: Build Release App Bundle (AAB)
+      run: ./gradlew bundleRelease
+      env:
+        KEYSTORE_PASSWORD: password
+        KEY_ALIAS: alias
+        KEY_PASSWORD: password
+
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: typesprint-release-apk
+        path: app/build/outputs/apk/release/app-release.apk
+
+    - name: Upload Release AAB
+      uses: actions/upload-artifact@v4
+      with:
+        name: typesprint-release-aab
+        path: app/build/outputs/bundle/release/app-release.aab

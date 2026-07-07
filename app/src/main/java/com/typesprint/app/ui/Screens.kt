@@ -59,7 +59,7 @@ fun TypingWebViewScreen() {
                     allowFileAccess = true
                     allowContentAccess = true
                 }
-                loadUrl("file:///android_asset/dist/index.html")
+                loadUrl("file:///android_asset/index.html")
             }
         }
     )
