@@ -41,7 +41,8 @@ export const AiCoachDashboard: React.FC<AiCoachDashboardProps> = ({ stats, profi
       if (auth?.currentUser) {
         idToken = await auth.currentUser.getIdToken();
       } else {
-        throw new Error('User not authenticated. Please sign in to access AI Coach.');
+        // Fallback gracefully without throwing
+        throw new Error('Not authenticated');
       }
 
       const response = await fetch(
@@ -74,7 +75,9 @@ export const AiCoachDashboard: React.FC<AiCoachDashboardProps> = ({ stats, profi
         ]);
       }
     } catch (err: any) {
-      console.error(err);
+      if (err.message !== 'Not authenticated') {
+        console.error(err);
+      }
       setError('Could not connect to fullstack AI server. Using local heuristic rules.');
       // Fallback rule-based layout
       const weak = Object.entries(stats.mistypedKeys || {})

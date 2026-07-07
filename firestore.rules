@@ -30,7 +30,7 @@ service cloud.firestore {
 
     // Entity Validations
     function isValidUser(data) {
-      return data.keys().hasOnly(['profile', 'stats', 'achievements', 'settings', 'completedLessons', 'dailyChallenges', 'lastSynced']) &&
+      return data.keys().hasOnly(['profile', 'stats', 'achievements', 'settings', 'completedLessons', 'dailyChallenges', 'lastSynced', 'email', 'customParagraphs', 'paragraphFolders', 'paragraphFavorites', 'paragraphStats', 'paragraphHistory', 'favExams', 'examAttempts', 'examStats', 'gameRecords']) &&
              (!data.keys().contains('profile') || (
                data.profile is map &&
                data.profile.keys().hasOnly(['xp', 'level', 'name', 'username', 'coins', 'gems', 'selectedAvatar', 'selectedTitle', 'unlockedAvatars', 'unlockedTitles', 'unlockedThemes', 'unlockedSkins', 'selectedSkin', 'selectedFrame', 'selectedNameColor', 'selectedSfxPack', 'selectedTypingEffect', 'selectedCursorStyle', 'selectedFont', 'unlockedFrames', 'unlockedNameColors', 'unlockedSfxPacks', 'unlockedTypingEffects', 'unlockedCursorStyles', 'unlockedFonts', 'calendarClaimedDays', 'calendarLastClaimDate', 'streakDaily', 'streakWeekly', 'streakMonthly', 'streakYearly', 'battlePassXp', 'battlePassTier', 'battlePassPremium', 'claimedFreeTiers', 'claimedPremiumTiers', 'typingMode', 'keyboardType', 'deviceName', 'onboardingCompleted', 'email', 'profilePhoto', 'country', 'preferredLanguage']) &&
@@ -50,7 +50,17 @@ service cloud.firestore {
              )) &&
              (!data.keys().contains('completedLessons') || (data.completedLessons is list && data.completedLessons.size() < 500)) &&
              (!data.keys().contains('dailyChallenges') || data.dailyChallenges is list) &&
-             (!data.keys().contains('lastSynced') || data.lastSynced == request.time);
+             (!data.keys().contains('email') || data.email is string) &&
+             (!data.keys().contains('customParagraphs') || data.customParagraphs is list) &&
+             (!data.keys().contains('paragraphFolders') || data.paragraphFolders is list) &&
+             (!data.keys().contains('paragraphFavorites') || data.paragraphFavorites is list) &&
+             (!data.keys().contains('paragraphStats') || data.paragraphStats is map) &&
+             (!data.keys().contains('paragraphHistory') || data.paragraphHistory is list) &&
+             (!data.keys().contains('favExams') || data.favExams is list) &&
+             (!data.keys().contains('examAttempts') || data.examAttempts is list) &&
+             (!data.keys().contains('examStats') || data.examStats is map) &&
+             (!data.keys().contains('gameRecords') || data.gameRecords is map) &&
+             (!data.keys().contains('lastSynced') || data.lastSynced is string || data.lastSynced is timestamp);
     }
 
     function isValidLeaderboardEntry(data) {
