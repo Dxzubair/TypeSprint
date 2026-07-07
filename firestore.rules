@@ -91,10 +91,7 @@ service cloud.firestore {
 
     // Match blocks
     match /users/{userId} {
-      allow read: if isOwner(userId);
-      allow create: if isOwner(userId) && isValidUser(incoming());
-      allow update: if isOwner(userId) && isValidUser(incoming());
-      allow delete: if isOwner(userId);
+      allow read, write: if isOwner(userId);
       
       match /custom_paragraphs/{paragraphId} {
         allow read: if isOwner(userId) && isValidId(paragraphId);
@@ -107,9 +104,7 @@ service cloud.firestore {
 
     match /leaderboard/{leaderboardId} {
       allow read: if true;
-      allow create: if isSignedIn() && incoming().userId == request.auth.uid && isValidLeaderboardEntry(incoming()) && isValidId(leaderboardId);
-      allow update: if isSignedIn() && existing().userId == request.auth.uid && incoming().userId == request.auth.uid && isValidLeaderboardEntry(incoming()) && isValidId(leaderboardId);
-      allow delete: if isSignedIn() && existing().userId == request.auth.uid && isValidId(leaderboardId);
+      allow write: if isSignedIn() && incoming().userId == request.auth.uid && isValidId(leaderboardId);
     }
 
     match /paragraphs/{paragraphId} {
