@@ -145,14 +145,7 @@ fun ParagraphHubScreen(viewModel: TypeSprintViewModel) {
                 onValueChange = { viewModel.onParagraphInputChange(it) },
                 onBack = { viewModel.resetParagraphTest(); viewModel.selectParagraph(currentParagraph) },
                 onClose = { viewModel.resetParagraphTest(); viewModel.selectParagraph(currentParagraph) /* will navigate back */ }
-            ) {
-                // Exit button
-                viewModel.selectParagraph(currentParagraph) // Reset is implicit
-                // Set current to null to show lists
-                viewModel.viewModelScope.launch {
-                    // Trigger a navigation action in effect by setting current null
-                }
-            }
+            )
         }
     }
 }
