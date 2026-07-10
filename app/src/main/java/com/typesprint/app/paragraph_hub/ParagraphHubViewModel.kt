@@ -64,9 +64,21 @@ class ParagraphHubViewModel(
     val repeatMode: StateFlow<Boolean> = _repeatMode.asStateFlow()
 
     // Derived filtered paragraphs flow
+    // NOTE: combine() only has named-parameter overloads for up to 5 flows.
+    // With 7 flows we must use the vararg overload and read the Array by index.
     val filteredParagraphs: StateFlow<List<ParagraphEntity>> = combine(
         paragraphs, _searchQuery, _selectedCategory, _selectedDifficulty, _selectedFolderId, _sortBy, favorites
-    ) { list, query, category, difficulty, folderId, sort, favs ->
+    ) { values ->
+        @Suppress("UNCHECKED_CAST")
+        val list = values[0] as List<ParagraphEntity>
+        val query = values[1] as String
+        val category = values[2] as String
+        val difficulty = values[3] as String
+        val folderId = values[4] as String?
+        val sort = values[5] as String
+        @Suppress("UNCHECKED_CAST")
+        val favs = values[6] as List<FavoriteEntity>
+
         var filtered = list
 
         if (query.isNotEmpty()) {
@@ -96,11 +108,7 @@ class ParagraphHubViewModel(
         when (sort) {
             "A-Z" -> filtered.sortedBy { it.title }
             "WPM" -> filtered.sortedByDescending { it.wordCount }
-            "Favorites" -> filtered.sortedWith { a, b ->
-                val aFav = if (favIds.contains(a.id)) 1 else 0
-                val bFav = if (favIds.contains(b.id)) 1 else 0
-                bFav.compareTo(aFav)
-            }
+            "Favorites" -> filtered.sortedByDescending { favIds.contains(it.id) }
             else -> filtered.sortedByDescending { it.createdAt }
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
