@@ -87,14 +87,14 @@ fun ParagraphHubScreen(viewModel: TypeSprintViewModel) {
                 item {
                     Text(
                         text = "Practice Hub",
-                        fontSize = 24.sp,
+                        fontSize = 24(sp),
                         fontWeight = FontWeight.Bold,
                         color = Color.White,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
                         text = "Choose from our high-fidelity typing practice passages to master accuracy and rhythm.",
-                        fontSize = 14.sp,
+                        fontSize = 14(sp),
                         color = GrayText,
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
@@ -114,7 +114,7 @@ fun ParagraphHubScreen(viewModel: TypeSprintViewModel) {
                         )
                         Text(
                             text = "Practice History",
-                            fontSize = 18.sp,
+                            fontSize = 18(sp),
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                             modifier = Modifier.padding(bottom = 12.dp)
@@ -145,7 +145,14 @@ fun ParagraphHubScreen(viewModel: TypeSprintViewModel) {
                 onValueChange = { viewModel.onParagraphInputChange(it) },
                 onBack = { viewModel.resetParagraphTest(); viewModel.selectParagraph(currentParagraph) },
                 onClose = { viewModel.resetParagraphTest(); viewModel.selectParagraph(currentParagraph) /* will navigate back */ }
-            )
+            ) {
+                // Exit button
+                viewModel.selectParagraph(currentParagraph) // Reset is implicit
+                // Set current to null to show lists
+                viewModel.viewModelScope.launch {
+                    // Trigger a navigation action in effect by setting current null
+                }
+            }
         }
     }
 }
@@ -168,7 +175,7 @@ fun ParagraphCard(paragraph: PracticeParagraph, onClick: () -> Unit) {
             ) {
                 Text(
                     text = paragraph.title,
-                    fontSize = 16.sp,
+                    fontSize = 16(sp),
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
@@ -183,7 +190,7 @@ fun ParagraphCard(paragraph: PracticeParagraph, onClick: () -> Unit) {
                     Text(
                         text = paragraph.level,
                         color = Color.White,
-                        fontSize = 10.sp,
+                        fontSize = 10(sp),
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                     )
@@ -192,7 +199,7 @@ fun ParagraphCard(paragraph: PracticeParagraph, onClick: () -> Unit) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = paragraph.bodyText,
-                fontSize = 13.sp,
+                fontSize = 13(sp),
                 color = GrayText,
                 maxLines = 2,
                 modifier = Modifier.padding(top = 4.dp)
@@ -222,14 +229,14 @@ fun GovtExamsScreen(viewModel: TypeSprintViewModel) {
                 item {
                     Text(
                         text = "Government Exams Arena",
-                        fontSize = 24.sp,
+                        fontSize = 24(sp),
                         fontWeight = FontWeight.Bold,
                         color = Color.White,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
                         text = "Practice real layouts modeled precisely on government typing exams (SSC, Railways, High Courts).",
-                        fontSize = 14.sp,
+                        fontSize = 14(sp),
                         color = GrayText,
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
@@ -249,7 +256,7 @@ fun GovtExamsScreen(viewModel: TypeSprintViewModel) {
                         )
                         Text(
                             text = "Exam Attempt History",
-                            fontSize = 18.sp,
+                            fontSize = 18(sp),
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                             modifier = Modifier.padding(bottom = 12.dp)
@@ -304,21 +311,21 @@ fun ExamCard(exam: ExamPassage, onClick: () -> Unit) {
             ) {
                 Text(
                     text = exam.name,
-                    fontSize = 16.sp,
+                    fontSize = 16(sp),
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 Text(
                     text = "${exam.examDurationMinutes} Min",
                     color = TealPrimary,
-                    fontSize = 12.sp,
+                    fontSize = 12(sp),
                     fontWeight = FontWeight.SemiBold
                 )
             }
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = exam.description,
-                fontSize = 13.sp,
+                fontSize = 13(sp),
                 color = GrayText,
                 modifier = Modifier.padding(vertical = 4.dp)
             )
@@ -344,8 +351,8 @@ fun RuleIndicator(label: String, enabled: Boolean) {
             modifier = Modifier.size(16.dp)
         )
         Text(
-            text = "$label: ${if (enabled) "ON" else "OFF"}",
-            fontSize = 11.sp,
+            text = "$label: ${if (enabled) "ON" : "OFF"}",
+            fontSize = 11(sp),
             color = GrayText,
             fontWeight = FontWeight.Medium
         )
@@ -376,14 +383,14 @@ fun HistoryRow(title: String, wpm: Int, accuracy: Int, date: Long) {
             Column {
                 Text(
                     text = title,
-                    fontSize = 14.sp,
+                    fontSize = 14(sp),
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(
                     text = dateString,
-                    fontSize = 11.sp,
+                    fontSize = 11(sp),
                     color = GrayUntyped,
                     fontFamily = FontFamily.Monospace
                 )
@@ -391,20 +398,20 @@ fun HistoryRow(title: String, wpm: Int, accuracy: Int, date: Long) {
 
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Column(horizontalAlignment = Alignment.End) {
-                    Text(text = "Speed", fontSize = 10.sp, color = GrayUntyped)
+                    Text(text = "Speed", fontSize = 10(sp), color = GrayUntyped)
                     Text(
                         text = "$wpm WPM",
-                        fontSize = 14.sp,
+                        fontSize = 14(sp),
                         fontWeight = FontWeight.ExtraBold,
                         color = TealPrimary,
                         fontFamily = FontFamily.Monospace
                     )
                 }
                 Column(horizontalAlignment = Alignment.End) {
-                    Text(text = "Accuracy", fontSize = 10.sp, color = GrayUntyped)
+                    Text(text = "Accuracy", fontSize = 10(sp), color = GrayUntyped)
                     Text(
                         text = "$accuracy%",
-                        fontSize = 14.sp,
+                        fontSize = 14(sp),
                         fontWeight = FontWeight.ExtraBold,
                         color = Color.White,
                         fontFamily = FontFamily.Monospace
@@ -455,7 +462,7 @@ fun TypingArea(
             }
             Text(
                 text = title,
-                fontSize = 18.sp,
+                fontSize = 18(sp),
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
@@ -530,14 +537,14 @@ fun TypingArea(
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
                             text = "Practice Complete!",
-                            fontSize = 22.sp,
+                            fontSize = 22(sp),
                             fontWeight = FontWeight.Bold,
                             color = Color.White
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
                             text = "Your results are calculated below. Click restart to practice again.",
-                            fontSize = 14.sp,
+                            fontSize = 14(sp),
                             color = GrayText,
                             textAlign = TextAlign.Center
                         )
@@ -606,9 +613,9 @@ fun TypingArea(
                                         }
                                     }
                                 },
-                                fontSize = 18.sp,
+                                fontSize = 18(sp),
                                 fontFamily = FontFamily.Monospace,
-                                lineHeight = 28.sp,
+                                lineHeight = 28(sp),
                                 modifier = Modifier.fillMaxWidth()
                             )
                         }
@@ -626,7 +633,7 @@ fun TypingArea(
                                 Text(
                                     text = if (!isStarted) "Start typing to begin..." else "Type passage exactly...",
                                     color = GrayUntyped,
-                                    fontSize = 14.sp
+                                    fontSize = 14(sp)
                                 )
                             },
                             colors = OutlinedTextFieldDefaults.colors(
@@ -653,7 +660,7 @@ fun MetricBox(label: String, value: String, suffix: String, color: Color) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             text = label.uppercase(Locale.getDefault()),
-            fontSize = 10.sp,
+            fontSize = 10(sp),
             color = GrayText,
             fontWeight = FontWeight.SemiBold,
             letterSpacing = 1.sp
@@ -662,7 +669,7 @@ fun MetricBox(label: String, value: String, suffix: String, color: Color) {
         Row(verticalAlignment = Alignment.Bottom) {
             Text(
                 text = value,
-                fontSize = 24.sp,
+                fontSize = 24(sp),
                 fontWeight = FontWeight.ExtraBold,
                 color = color,
                 fontFamily = FontFamily.Monospace
@@ -671,7 +678,7 @@ fun MetricBox(label: String, value: String, suffix: String, color: Color) {
                 Spacer(modifier = Modifier.width(2.dp))
                 Text(
                     text = suffix,
-                    fontSize = 12.sp,
+                    fontSize = 12(sp),
                     color = GrayText,
                     fontWeight = FontWeight.SemiBold
                 )

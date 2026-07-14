@@ -85,7 +85,7 @@ fun ParagraphHubScreen(
             // Header and Tab switching
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
@@ -157,8 +157,7 @@ fun ParagraphHubScreen(
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = OrangeAccent,
                     unfocusedBorderColor = Color.DarkGray,
-                    focusedTextColor = Color.White,
-                    unfocusedTextColor = Color.White,
+                    textColor = Color.White,
                     containerColor = CardBackground
                 )
             )
@@ -229,7 +228,7 @@ fun ParagraphHubScreen(
                             .padding(24.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Column(horizontalAlignment = Alignment.CenterVertically) {
                             Icon(
                                 imageVector = Icons.Default.AutoAwesome,
                                 contentDescription = "AI Coach",
@@ -413,11 +412,7 @@ fun ParagraphHubScreen(
                         onValueChange = { newTitle = it },
                         label = { Text("Title", color = Color.Gray) },
                         modifier = Modifier.fillMaxWidth(),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White,
-                            focusedBorderColor = OrangeAccent
-                        )
+                        colors = TextFieldDefaults.outlinedTextFieldColors(textColor = Color.White, focusedBorderColor = OrangeAccent)
                     )
 
                     OutlinedTextField(
@@ -427,11 +422,7 @@ fun ParagraphHubScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(140.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White,
-                            focusedBorderColor = OrangeAccent
-                        )
+                        colors = TextFieldDefaults.outlinedTextFieldColors(textColor = Color.White, focusedBorderColor = OrangeAccent)
                     )
 
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -491,11 +482,7 @@ fun ParagraphHubScreen(
                     onValueChange = { folderName = it },
                     label = { Text("Folder Name", color = Color.Gray) },
                     modifier = Modifier.fillMaxWidth(),
-                    colors = TextFieldDefaults.outlinedTextFieldColors(
-                        focusedTextColor = Color.White,
-                        unfocusedTextColor = Color.White,
-                        focusedBorderColor = OrangeAccent
-                    )
+                    colors = TextFieldDefaults.outlinedTextFieldColors(textColor = Color.White, focusedBorderColor = OrangeAccent)
                 )
             },
             confirmButton = {
@@ -807,8 +794,7 @@ fun KotlinPracticeSession(
                     .fillMaxWidth()
                     .height(140.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    focusedTextColor = Color.White,
-                    unfocusedTextColor = Color.White,
+                    textColor = Color.White,
                     containerColor = Color(0xFF1E1E24),
                     focusedBorderColor = Color(0xFFFF9800)
                 )
